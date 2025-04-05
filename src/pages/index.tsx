@@ -126,25 +126,33 @@ const Home: React.FC = () => {
         </section>
 
         {/* Main Content Section */}
-        <section
-          ref={contentRef}
-          className="relative min-h-screen flex flex-col items-center justify-center p-6 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/whitefiretexturewasted.png')" }}
-        >
-          <h2 className="text-2xl font-semibold border-b border-pink-300 inline-block pb-2 mb-6">
-            Featured Drops
-          </h2>
-          <div ref={productsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {products.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onClick={() => setSelectedProduct(product)}
-              />
-            ))}
-          </div>
-         
-        </section>
+        <section ref={contentRef} className="relative min-h-screen flex flex-col items-center justify-center p-6">
+  {/* Background overlay */}
+  <div
+    className="absolute inset-0 bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/wasted.png')",
+      backgroundSize: '50%', // Makes the image smaller
+      opacity: 0.2,         // Sets the background opacity
+    }}
+  ></div>
+  {/* Content on top */}
+  <div className="relative z-10">
+    <h2 className="text-2xl font-semibold border-b border-pink-300 inline-block pb-2 mb-6">
+      Featured Drops
+    </h2>
+    <div ref={productsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+          onClick={() => setSelectedProduct(product)}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
       </div>
       {selectedProduct && (
         <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
