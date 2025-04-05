@@ -10,7 +10,7 @@ const products: Product[] = [
   {
     id: 1,
     name: 'Wasted Fire Tee',
-    image: '/whitefireweirdwasted.png',
+    image: '/Tees/whitefireweirdwasted.png',
     price: '$29.99',
     sizes: 'S, M, L, XL',
     description: 'That’s metal concert merch for a band that only exists in your imagination. Textured white on black gives it that crunchy, rough “I’ve seen stuff” vibe. Clean duality. Front says chaos. Back says commitment.',
@@ -19,7 +19,7 @@ const products: Product[] = [
   {
     id: 2,
     name: 'Wasted Logo Tee',
-    image: '/wastedsample.png',
+    image: '/Tees/wastedsample.png',
     price: '$24.99',
     sizes: 'S, M, L, XL',
     description: 'Are you kidding me? The weathered texture plus that chunk of back art? It’s giving “worn by someone who hasn’t slept in 48 hours and skates better than you."',
@@ -28,16 +28,27 @@ const products: Product[] = [
   {
     id: 3,
     name: 'Wasted Fire Tee',
-    image: '/wastedfire.png',
+    image: '/Tees/FireTees/wastedfire.png',
     price: '$29.99',
     sizes: 'S, M, L, XL',
     description: 'Color splash! Still gritty, but now you’re flirting with aggressive energy drink mascot.',
-    verdict:'Keep this for a collab or surprise drop. Call it "Hot Damage" or some equally unhinged two-word combo.'
-  },
+    verdict: 'Keep this for a collab or surprise drop. Call it "Hot Damage" or some equally unhinged two-word combo.',
+    colors: [
+      { color: 'cyan', image: '/Tees/FireTees/cyanwastedfire.png' },
+      { color: 'gold', image: '/Tees/FireTees/goldenwastedfire.png' },
+      { color: 'green', image: '/Tees/FireTees/greenmagicwastedfire.png' },
+      { color: 'indigo', image: '/Tees/FireTees/magicwastedfire.png' },
+      { color: 'magenta', image: '/Tees/FireTees/screamingpinkwastedfire.png' },
+      { color: 'darkslateblue', image: '/Tees/FireTees/spacewastedfire.png' },
+      { color: 'deeppink', image: '/Tees/FireTees/warmpinkwastedfire.png' },
+      { color: 'orange', image: '/Tees/FireTees/wastedfire.png' },
+     
+    ]
+  },  
   {
     id: 4,
     name: 'Wasted Tees',
-    image: '/whitefirecleanback.png',
+    image: '/Tees/whitefirecleanback.png',
     price: '$34.99',
     sizes: 'S, M, L, XL',
     description: 'Okay this one’s the most accessible. You wear it to the corner store and still look like you don’t talk to your family.',
@@ -46,7 +57,7 @@ const products: Product[] = [
   {
     id: 5,
     name: 'Logo Tee',
-    image: '/minimalfrontlogo.png',
+    image: '/Tees/minimalfrontlogo.png',
     price: '$19.99',
     sizes: 'S, M, L, XL',
     description: 'YES. This is the "you don’t even know how hard I go" fit. Reserved in front, full villain arc in the back.',
@@ -55,7 +66,7 @@ const products: Product[] = [
   {
     id: 6,
     name: 'Graphic Tee',
-    image: '/wasted designtee.png',
+    image: '/Tees/wasted designtee.png',
     price: '$49.99',
     sizes: 'M, L, XL',
     description: 'This one pulls no punches. Front print says “I don’t need to prove anything,” and the back says “but I still could destroy you emotionally in two lines of lowercase text.” It’s giving discipline. It’s giving quiet power. It’s giving “I built this empire from bad dreams and geometry homework.”',
