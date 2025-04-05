@@ -118,12 +118,20 @@ const Home: React.FC = () => {
       <div className="relative min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section
-          ref={heroRef}
-          className="absolute inset-0 flex flex-col items-center justify-center z-50 bg-black"
-        >
-          <Image src="/WASTED.png" alt="Wasted Logo" width={300} height={100} priority />
-          <p className="mt-2 text-pink-300 tracking-wider">Wasted Potential. Unleashed.</p>
-        </section>
+  ref={heroRef}
+  className="absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center z-50 bg-black"
+>
+  <Image
+    src="/WASTED.png"
+    alt="Wasted Logo"
+    className="m-auto object-contain"
+    width={600}
+    height={200}
+    priority
+  />
+  <p className="mt-2 text-pink-300 tracking-wider">Wasted Potential. Unleashed.</p>
+</section>
+
 
         {/* Main Content Section */}
         <section ref={contentRef} className="relative min-h-screen flex flex-col items-center justify-center p-6">
