@@ -117,7 +117,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
 
         <button
           onClick={onClose}
-          className="absolute top-0 right-0 text-2xl text-white hover:text-pink-500 p-2 transition duration-200"
+          className=" cursor-pointer absolute top-2 right-2 text-2xl text-white hover:text-pink-500 p-2 transition duration-200"
         >
           &times;
         </button>
