@@ -6,7 +6,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 // Dynamically import the ShirtModel component to prevent SSR issues
-const ShirtModel = dynamic(() => import('./components/Shirt3DModel'), { ssr: false })
+const ShirtModel = dynamic(() => import('../components/Shirt3DModel'), { ssr: false })
 
 export default function ShirtPage() {
   const router = useRouter()

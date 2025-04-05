@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import gsap from 'gsap'
-import ProductModal, { Product } from './components/ProductModal'
-import ProductCard from './components/ProductCard'
+import ProductModal, { Product } from '../components/ProductModal'
+import ProductCard from '../components/ProductCard'
 
 const products: Product[] = [
   {

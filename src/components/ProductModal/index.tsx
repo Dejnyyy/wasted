@@ -109,8 +109,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
 
           {/* Navigation Button */}
           <div className="mt-8">
-            <Link href={`/3dshirts?shirt=${encodeURIComponent(selectedImage)}`}>
-              <p className="inline-block bg-black text-white font-bold rounded-xl border border-pink-500 py-2 px-4 animate-pulse">
+          <Link href={`/3dshirts?shirt=${encodeURIComponent(selectedImage)}`}>
+          <p className="inline-block bg-black text-white font-bold rounded-xl border border-pink-500 py-2 px-4 animate-pulse">
                 3D View
               </p>
             </Link>

@@ -8,7 +8,7 @@ type ShirtModelProps = ThreeElements['group'] & {
 
 export default function ShirtModel({ shirtImage, ...props }: ShirtModelProps) {
   // Use the provided shirtImage or default to '/wasted_designtee.png'
-  const textureUrl = shirtImage || '/wasted_designtee.png'
+  const textureUrl = shirtImage || '/Tees/wasted_designtee.png'
   const texture = useLoader(THREE.TextureLoader, textureUrl)
 
   // Clone the texture so we can modify them independently for front and back
