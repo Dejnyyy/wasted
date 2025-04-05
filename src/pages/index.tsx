@@ -47,7 +47,7 @@ const products: Product[] = [
   {
     id: 4,
     name: 'Wasted Tees',
-    image: '/Tees/whitefirecleanback.png',
+    image: '/Tees/Whitefirecleanback.png',
     price: '$34.99',
     sizes: 'S, M, L, XL',
     description: 'Okay this one’s the most accessible. You wear it to the corner store and still look like you don’t talk to your family.',
