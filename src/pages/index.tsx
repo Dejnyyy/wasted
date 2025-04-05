@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import gsap from 'gsap'
 import ProductModal, { Product } from './components/ProductModal'
 import ProductCard from './components/ProductCard'

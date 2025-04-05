@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-
+import Image from 'next/image'
 export interface Product {
   id: number
   name: string
@@ -59,9 +59,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
           onWheel={handleWheel}
           onMouseMove={handleMouseMove}
         >
-          <img
+          <Image
             src={selectedImage}
             alt={product.name}
+            width={1200}
+            height={1200}
             style={{
               transform: `scale(${scale})`,
               transformOrigin: `${origin.x * 100}% ${origin.y * 100}%`,
