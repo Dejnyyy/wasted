@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import Link from "next/link"
 export interface Product {
   id: number
   name: string
@@ -76,7 +76,16 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
             <span className="font-semibold">Verdict: </span>
             <span className="text-pink-500">{product.verdict}</span>
           </p>
+            {/* Navigation Button */}
+         <div className="mt-8">
+            <Link href="/3dshirts">
+              <p className="inline-block bg-black text-white font-bold rounded-xl border border-pink-500 py-2 px-4 animate-pulse">
+                 3D View
+              </p>
+            </Link>
+          </div>
         </div>
+       
         <button
           onClick={onClose}
           className="absolute top-0 right-0 text-2xl text-white hover:text-pink-500 p-2 transition duration-200"

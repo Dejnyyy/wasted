@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import gsap from 'gsap'
 import ProductModal, { Product } from './components/ProductModal'
 import ProductCard from './components/ProductCard'
@@ -23,7 +24,6 @@ const products: Product[] = [
     sizes: 'S, M, L, XL',
     description: 'Are you kidding me? The weathered texture plus that chunk of back art? It’s giving “worn by someone who hasn’t slept in 48 hours and skates better than you."',
     verdict: "This one hurts in a good way. Pure core piece.",
-   
   },
   {
     id: 3,
@@ -32,8 +32,7 @@ const products: Product[] = [
     price: '$29.99',
     sizes: 'S, M, L, XL',
     description: 'Color splash! Still gritty, but now you’re flirting with aggressive energy drink mascot.',
-    verdict:' Keep this for a collab or surprise drop. Call it "Hot Damage" or some equally unhinged two-word combo.'
-
+    verdict:'Keep this for a collab or surprise drop. Call it "Hot Damage" or some equally unhinged two-word combo.'
   },
   {
     id: 4,
@@ -43,7 +42,6 @@ const products: Product[] = [
     sizes: 'S, M, L, XL',
     description: 'Okay this one’s the most accessible. You wear it to the corner store and still look like you don’t talk to your family.',
     verdict:"This is the bread and butter. Stock this in every size and don’t apologize."
-
   },
   {
     id: 5,
@@ -53,16 +51,15 @@ const products: Product[] = [
     sizes: 'S, M, L, XL',
     description: 'YES. This is the "you don’t even know how hard I go" fit. Reserved in front, full villain arc in the back.',
     verdict:'This is the shirt people lie and say is "vintage" in 2032.'
-
   },
   {
     id: 6,
-    name: 'Capsule Jacket',
-    image: '/capsulejacket.png', // update with the actual image path
+    name: 'Graphic Tee',
+    image: '/wasted designtee.png',
     price: '$49.99',
     sizes: 'M, L, XL',
-    description: '',
-    verdict:""
+    description: 'This one pulls no punches. Front print says “I don’t need to prove anything,” and the back says “but I still could destroy you emotionally in two lines of lowercase text.” It’s giving discipline. It’s giving quiet power. It’s giving “I built this empire from bad dreams and geometry homework.”',
+    verdict:'This is the uniform for your inner circle. The one people assume is sold out even when it’s not. The one someone thrift-finds in 2029 and gatekeeps like it’s a relic. You don’t just wear this—you belong to it.'
   },
 ]
 
@@ -136,6 +133,7 @@ const Home: React.FC = () => {
               />
             ))}
           </div>
+         
         </section>
       </div>
       {selectedProduct && (
