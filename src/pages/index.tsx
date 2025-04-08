@@ -8,21 +8,21 @@ import ProductCard from '../components/ProductCard'
 const products: Product[] = [
   {
     id: 1,
-    name: 'Wasted Fire Tee',
-    image: '/Tees/whitefireweirdwasted.png',
-    price: '$29.99',
-    sizes: 'S, M, L, XL',
-    description: 'That’s metal concert merch for a band that only exists in your imagination. Textured white on black gives it that crunchy, rough “I’ve seen stuff” vibe. Clean duality. Front says chaos. Back says commitment.',
-    verdict:"Drop this in a limited run and pretend it was “too hot to keep in stock.”"
+    name: 'Graphic Tee',
+    image: '/Tees/wasted designtee.png',
+    price: '$49.99',
+    sizes: 'M, L, XL',
+    description: 'This one pulls no punches. Front print says “I don’t need to prove anything,” and the back says “but I still could destroy you emotionally in two lines of lowercase text.” It’s giving discipline. It’s giving quiet power. It’s giving “I built this empire from bad dreams and geometry homework.”',
+    verdict:'This is the uniform for your inner circle. The one people assume is sold out even when it’s not. The one someone thrift-finds in 2029 and gatekeeps like it’s a relic. You don’t just wear this—you belong to it.'
   },
   {
     id: 2,
-    name: 'Wasted Logo Tee',
-    image: '/Tees/wastedsample.png',
-    price: '$24.99',
+    name: 'Logo Tee',
+    image: '/Tees/minimalfrontlogo.png',
+    price: '$19.99',
     sizes: 'S, M, L, XL',
-    description: 'Are you kidding me? The weathered texture plus that chunk of back art? It’s giving “worn by someone who hasn’t slept in 48 hours and skates better than you."',
-    verdict: "This one hurts in a good way. Pure core piece.",
+    description: 'YES. This is the "you don’t even know how hard I go" fit. Reserved in front, full villain arc in the back.',
+    verdict:'This is the shirt people lie and say is "vintage" in 2032.'
   },
   {
     id: 3,
@@ -55,22 +55,23 @@ const products: Product[] = [
   },
   {
     id: 5,
-    name: 'Logo Tee',
-    image: '/Tees/minimalfrontlogo.png',
-    price: '$19.99',
+    name: 'Wasted Logo Tee',
+    image: '/Tees/wastedsample.png',
+    price: '$24.99',
     sizes: 'S, M, L, XL',
-    description: 'YES. This is the "you don’t even know how hard I go" fit. Reserved in front, full villain arc in the back.',
-    verdict:'This is the shirt people lie and say is "vintage" in 2032.'
-  },
+    description: 'Are you kidding me? The weathered texture plus that chunk of back art? It’s giving “worn by someone who hasn’t slept in 48 hours and skates better than you."',
+    verdict: "This one hurts in a good way. Pure core piece.",
+   },
   {
     id: 6,
-    name: 'Graphic Tee',
-    image: '/Tees/wasted designtee.png',
-    price: '$49.99',
-    sizes: 'M, L, XL',
-    description: 'This one pulls no punches. Front print says “I don’t need to prove anything,” and the back says “but I still could destroy you emotionally in two lines of lowercase text.” It’s giving discipline. It’s giving quiet power. It’s giving “I built this empire from bad dreams and geometry homework.”',
-    verdict:'This is the uniform for your inner circle. The one people assume is sold out even when it’s not. The one someone thrift-finds in 2029 and gatekeeps like it’s a relic. You don’t just wear this—you belong to it.'
-  },
+    name: 'Wasted Fire Tee',
+    image: '/Tees/whitefireweirdwasted.png',
+    price: '$29.99',
+    sizes: 'S, M, L, XL',
+    description: 'That’s metal concert merch for a band that only exists in your imagination. Textured white on black gives it that crunchy, rough “I’ve seen stuff” vibe. Clean duality. Front says chaos. Back says commitment.',
+    verdict:"Drop this in a limited run and pretend it was “too hot to keep in stock.”"
+  
+   },
 ]
 
 const Home: React.FC = () => {
