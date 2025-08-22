@@ -1,4 +1,4 @@
-import React, { Suspense, useMemo, useRef, useState } from "react";
+import React, { Suspense, useMemo, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -216,7 +216,6 @@ export default function ShirtPage() {
             <Stage
               environment={env}
               intensity={0.7}
-              contactShadow
               adjustCamera={1.1}
               shadows="contact"
             >
