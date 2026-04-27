@@ -1,10 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProductModal, { Product } from "../components/ProductModal";
 import ProductCard from "../components/ProductCard";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://wastedpotential.co";
+const OG_TITLE = "WASTED – Streetwear & Graphic Tees | Wasted Potential";
+const OG_DESC =
+  "Shop Wasted Potential streetwear. Graphic tees, fire editions, and limited drops built for those who don't need to prove anything—but still could.";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -193,12 +199,20 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>WASTED</title>
-        <meta
-          name="description"
-          content="Wasted Potential — Streetwear Clothing"
-        />
+        <title>{OG_TITLE}</title>
+        <meta name="description" content={OG_DESC} />
         <meta name="theme-color" content="#000000" />
+        <link rel="canonical" href={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:site_name" content="Wasted Potential" />
+        <meta property="og:title" content={OG_TITLE} />
+        <meta property="og:description" content={OG_DESC} />
+        <meta property="og:image" content={`${SITE_URL}/WASTED.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={OG_TITLE} />
+        <meta name="twitter:description" content={OG_DESC} />
+        <meta name="twitter:image" content={`${SITE_URL}/WASTED.png`} />
       </Head>
 
       <div className="relative min-h-screen bg-black text-white overflow-hidden">
@@ -262,17 +276,34 @@ const Home: React.FC = () => {
             }}
           />
 
+          <h1 className="sr-only">Wasted Potential – Streetwear Clothing</h1>
+
+          {/* Brand statement */}
+          <p className="mb-10 max-w-xl text-center text-sm leading-relaxed text-zinc-400">
+            Wasted Potential is a streetwear label built on quiet devastation and loud
+            graphics. Each drop is a limited run—once it&rsquo;s gone, it&rsquo;s gone. Wear
+            something that says everything without saying a word.
+          </p>
+
           {/* Header / Section title */}
           <div className="mb-8 flex w-full items-end justify-between gap-4">
             <h2 className="inline-block border-b border-pink-300/60 pb-2 text-xl font-semibold tracking-wide md:text-2xl">
               Featured Drops
             </h2>
-            <a
-              href="#catalog"
-              className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
-            >
-              Scroll to shop ↓
-            </a>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/3dshirts"
+                className="text-xs text-pink-300/80 transition-colors hover:text-pink-200"
+              >
+                View in 3D →
+              </Link>
+              <a
+                href="#catalog"
+                className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
+              >
+                Scroll to shop ↓
+              </a>
+            </div>
           </div>
 
           {/* Products Grid */}
@@ -290,6 +321,38 @@ const Home: React.FC = () => {
               </div>
             ))}
           </div>
+          {/* Footer */}
+          <footer className="mt-16 w-full border-t border-white/10 pt-8">
+            <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
+              <p className="text-xs text-zinc-500">
+                &copy; {new Date().getFullYear()} Wasted Potential. All rights reserved.
+              </p>
+              <nav aria-label="Footer navigation" className="flex items-center gap-5">
+                <Link
+                  href="/3dshirts"
+                  className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
+                >
+                  3D Viewer
+                </Link>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.tiktok.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
+                >
+                  TikTok
+                </a>
+              </nav>
+            </div>
+          </footer>
         </section>
       </div>
 

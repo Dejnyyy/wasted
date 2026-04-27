@@ -110,8 +110,24 @@ export default function ShirtPage() {
   return (
     <>
       <Head>
-        <title>3D Wasted Shirt</title>
+        <title>3D Shirt Viewer – Wasted Potential Streetwear</title>
+        <meta
+          name="description"
+          content="Preview Wasted Potential tees in an interactive 3D viewer. Rotate, zoom, and swap textures before you buy. Try every graphic in real time."
+        />
         <meta name="theme-color" content="#0f0f15" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="3D Shirt Viewer – Wasted Potential Streetwear" />
+        <meta
+          property="og:description"
+          content="Preview Wasted Potential tees in an interactive 3D viewer. Rotate, zoom, and swap textures before you buy."
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="3D Shirt Viewer – Wasted Potential" />
+        <meta
+          name="twitter:description"
+          content="Preview Wasted Potential tees in an interactive 3D viewer. Rotate, zoom, and swap textures before you buy."
+        />
       </Head>
 
       <div className="relative h-[100svh] w-screen overflow-hidden bg-[#0f0f15] text-white">
