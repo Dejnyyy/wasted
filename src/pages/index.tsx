@@ -7,10 +7,51 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProductModal, { Product } from "../components/ProductModal";
 import ProductCard from "../components/ProductCard";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://wastedpotential.co";
+const SITE_URL = "https://wasted.dejny.eu";
 const OG_TITLE = "WASTED – Streetwear & Graphic Tees | Wasted Potential";
 const OG_DESC =
   "Shop Wasted Potential streetwear. Graphic tees, fire editions, and limited drops built for those who don't need to prove anything—but still could.";
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dejny.eu/#organization",
+      name: "Dejny",
+      url: "https://dejny.eu",
+      logo: { "@type": "ImageObject", url: "https://dejny.eu/icon.png", width: 512, height: 512 },
+      email: "dejny@dejny.eu",
+      address: { "@type": "PostalAddress", addressLocality: "Praha", addressCountry: "CZ" },
+      contactPoint: { "@type": "ContactPoint", contactType: "customer support", email: "dejny@dejny.eu", availableLanguage: ["cs", "en"] },
+      sameAs: [
+        "https://github.com/Dejnyyy",
+        "https://linkedin.com/in/dejny",
+        "https://www.instagram.com/_dejny",
+        "https://www.tiktok.com/@dejnyyy",
+      ],
+    },
+    {
+      "@type": "Brand",
+      "@id": `${SITE_URL}/#brand`,
+      name: "Wasted Potential",
+      alternateName: "WASTED",
+      url: SITE_URL,
+      logo: `${SITE_URL}/WASTED.png`,
+      slogan: "Wasted Potential. Unleashed.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "WASTED – Wasted Potential",
+      url: SITE_URL,
+      description: OG_DESC,
+      inLanguage: "en",
+      about: { "@id": `${SITE_URL}/#brand` },
+      publisher: { "@id": "https://dejny.eu/#organization" },
+    },
+  ],
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -202,7 +243,7 @@ const Home: React.FC = () => {
         <title>{OG_TITLE}</title>
         <meta name="description" content={OG_DESC} />
         <meta name="theme-color" content="#000000" />
-        <link rel="canonical" href={SITE_URL} />
+        <link rel="canonical" href={`${SITE_URL}/`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:site_name" content="Wasted Potential" />
@@ -212,7 +253,13 @@ const Home: React.FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={OG_TITLE} />
         <meta name="twitter:description" content={OG_DESC} />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="1024" />
         <meta name="twitter:image" content={`${SITE_URL}/WASTED.png`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
+        />
       </Head>
 
       <div className="relative min-h-screen bg-black text-white overflow-hidden">
@@ -276,7 +323,9 @@ const Home: React.FC = () => {
             }}
           />
 
-          <h1 className="sr-only">Wasted Potential – Streetwear Clothing</h1>
+          <h1 className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.3em] text-pink-300/80">
+            Wasted Potential – Streetwear Clothing
+          </h1>
 
           {/* Brand statement */}
           <p className="mb-10 max-w-xl text-center text-sm leading-relaxed text-zinc-400">
@@ -321,6 +370,27 @@ const Home: React.FC = () => {
               </div>
             ))}
           </div>
+          {/* About */}
+          <section className="mt-20 w-full max-w-3xl space-y-4 text-sm leading-relaxed text-zinc-400">
+            <h2 className="text-lg font-semibold tracking-wide text-zinc-200">About Wasted Potential</h2>
+            <p>
+              WASTED is a concept streetwear label: oversized graphic tees with heavy back prints, gritty textures and
+              short lines of text that say more than they should. The collection mixes clean logo tees for everyday
+              wear with louder pieces like the Wasted Fire Tee, which comes in eight colourways from cyan and gold to
+              screaming pink and deep space blue.
+            </p>
+            <p>
+              Click any shirt in the catalogue to open a quick view with the price, available sizes, the story behind
+              the design and our honest verdict. Want to see how a print sits on a real garment? Open the 3D viewer,
+              rotate the shirt, zoom in on the details and switch between designs and lighting setups right in your
+              browser.
+            </p>
+            <p>
+              WASTED is a design and 3D web project by Dejny, built with Next.js, GSAP animations and three.js. Every
+              drop is meant to be a limited run, so once a design is gone, it is gone.
+            </p>
+          </section>
+
           {/* Footer */}
           <footer className="mt-16 w-full border-t border-white/10 pt-8">
             <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
@@ -335,20 +405,16 @@ const Home: React.FC = () => {
                   3D Viewer
                 </Link>
                 <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://dejny.eu"
                   className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
                 >
-                  Instagram
+                  Made by Dejny
                 </a>
                 <a
-                  href="https://www.tiktok.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://github.com/Dejnyyy/wasted"
                   className="text-xs text-zinc-400 transition-colors hover:text-zinc-200"
                 >
-                  TikTok
+                  GitHub
                 </a>
               </nav>
             </div>

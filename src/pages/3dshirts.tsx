@@ -122,7 +122,12 @@ export default function ShirtPage() {
           property="og:description"
           content="Preview Wasted Potential tees in an interactive 3D viewer. Rotate, zoom, and swap textures before you buy."
         />
-        <meta name="twitter:card" content="summary" />
+        <meta property="og:url" content="https://wasted.dejny.eu/3dshirts" />
+        <meta property="og:image" content="https://wasted.dejny.eu/WASTED.png" />
+        <meta property="og:site_name" content="Wasted Potential" />
+        <link rel="canonical" href="https://wasted.dejny.eu/3dshirts" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://wasted.dejny.eu/WASTED.png" />
         <meta name="twitter:title" content="3D Shirt Viewer – Wasted Potential" />
         <meta
           name="twitter:description"
@@ -149,6 +154,10 @@ export default function ShirtPage() {
           >
             ← Back
           </Link>
+
+          <h1 className="hidden text-sm font-semibold tracking-wide text-white/80 md:block">
+            WASTED 3D Shirt Viewer
+          </h1>
 
           <div className="flex items-center gap-2">
             {/* Environment select */}
